@@ -31,7 +31,7 @@ import {
   useQuery,
   useQueryClient,
 } from "@tanstack/react-query";
-import CommentsLoader from "./Loaders/commentsLoader";
+import CommentsLoader from "./Loaders/CommentsLoader";
 import CommentCreation from "./CommentCreation";
 import { useContext, useState, useRef } from "react";
 import { IoPencil } from "react-icons/io5";
