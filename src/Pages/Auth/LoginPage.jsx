@@ -8,12 +8,14 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "./../../context/AuthContext";
+import { useQueryClient } from "@tanstack/react-query";
 
 export default function LoginPage() {
   const navigate = useNavigate();
   const [apiError, setapiError] = useState(null);
   const [isLoading, setisLoading] = useState(false);
   const { userToken, setuserToken } = useContext(AuthContext);
+  const query = useQueryClient();
   // ZOD for validation
   const schema = zod.object({
     email: zod.email("please enter a valid email address"),
@@ -50,6 +52,7 @@ export default function LoginPage() {
           const x = resolve.data.data.user;
           localStorage.setItem("userToken", resolve.data.data.token);
           setuserToken(resolve.data.data.token);
+          query.invalidateQueries({ queryKey: ["userData"] });
           navigate("/");
         }
       })
@@ -133,24 +136,31 @@ export default function LoginPage() {
           isInvalid={!!errors.password}
         />
         {/* Submit button */}
-        <Button
-          isDisabled={isLoading}
-          color="primary"
-          type="submit"
-          className="w-full bg-linear-to-r from-amber-400 to-rose-500 hover:from-amber-500 hover:to-rose-600 text-white disabled:opacity-50 disabled:cursor-not-allowed capitalize font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
-          endContent={isLoading && <Spinner color="white" variant="dots" />}
-        >
-          {isLoading ? "Loging in" : "Log In"}
-        </Button>
-        {/* navigate to register button */}
-        <Button
-          onPress={() => navigate("/auth/register")}
-          color="primary"
-          type="button"
-          className="w-full border-2 border-amber-400 bg-white hover:bg-amber-500 hover:text-white text-amber-400  font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 "
-        >
-          Don't have an account? Register now!
-        </Button>
+        <div className="flex flex-col justify-center items-center gap-2 w-full">
+          <Button
+            isDisabled={isLoading}
+            color="primary"
+            type="submit"
+            className="w-full bg-linear-to-r from-amber-400 to-rose-500 hover:from-amber-500 hover:to-rose-600 text-white disabled:opacity-50 disabled:cursor-not-allowed capitalize font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
+            endContent={isLoading && <Spinner color="white" variant="dots" />}
+          >
+            {isLoading ? "Loging in" : "Log In"}
+          </Button>
+          {/* navigate to register button */}
+          <p className="text-amber-400 font-medium mt-1 flex items-center gap-2 ">
+            <span className="w-8 h-0.5 bg-amber-200 rounded-full"></span>Don't
+            have an account?
+            <span className="w-8 h-0.5 bg-amber-200 rounded-full"></span>
+          </p>
+          <Button
+            onPress={() => navigate("/auth/register")}
+            color="primary"
+            type="button"
+            className="w-full border-2 border-amber-400 bg-white hover:bg-amber-500 hover:text-white text-amber-400  font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 "
+          >
+            Register now!
+          </Button>
+        </div>
       </Form>
     </>
   );

@@ -1,10 +1,12 @@
 import axios from "axios";
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { AuthContext } from "./AuthContext";
 
 export const UserContext = createContext(null);
 
 async function fetchUserData() {
+
   const response = await axios.get(
     `${import.meta.env.VITE_BASE_URL}/users/profile-data`,
     {
@@ -13,11 +15,12 @@ async function fetchUserData() {
       },
     },
   );
-  
+
   return response.data.data.user;
 }
 
 export default function UserContextProvider({ children }) {
+   const { userToken } = useContext(AuthContext); 
   const queryClient = useQueryClient();
 
   const {
@@ -28,6 +31,8 @@ export default function UserContextProvider({ children }) {
     queryKey: ["userData"],
     queryFn: fetchUserData,
     retry: false,
+    enabled: !!userToken,
+    staleTime: 0,
   });
 
   function setUserData(newData) {

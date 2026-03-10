@@ -85,7 +85,7 @@ export default function Settings() {
             <GoKey size={22} />
           </div>
           <div>
-            <h2 className="font-bold text-gray-800 text-3xl sm:text-4xl leading-12">
+            <h2 className="font-bold text-gray-800 text-2xl sm:text-3xl lg:text-4xl leading-12">
               Change Password
             </h2>
             <p className="text-amber-400 font-medium mt-1 flex items-center gap-2">

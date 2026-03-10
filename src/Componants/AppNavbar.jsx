@@ -9,6 +9,7 @@ import {
   DropdownTrigger,
   DropdownSection,
   Avatar,
+  Skeleton,
 } from "@heroui/react";
 import { GoHome, GoPerson, GoBell, GoGear, GoSignOut } from "react-icons/go";
 
@@ -23,6 +24,7 @@ export default function AppNavbar() {
   const { userData } = useContext(UserContext);
   const { name, photo } = userData || {};
   const navigate = useNavigate();
+
 
   function logOut() {
     localStorage.removeItem("userToken");
@@ -49,7 +51,7 @@ export default function AppNavbar() {
       </NavbarBrand>
 
       {/* Main Navigation */}
-      <div className=" bg-gray-50/90 px-2 py-1 rounded-2xl border border-gray-200/80 shadow-sm">
+      <div className="hidden sm:flex bg-gray-50/90 px-2 py-1 rounded-2xl border border-gray-200/80 shadow-sm">
         <NavbarContent
           className=" gap-1 font-medium"
           justify="center"
@@ -66,7 +68,7 @@ export default function AppNavbar() {
               }
             >
               <GoHome size={20} strokeWidth={1.5} />
-              <span className="hidden sm:flex">Home</span>
+              <span className="hidden md:flex">Home</span>
             </NavLink>
           </NavbarItem>
 
@@ -82,7 +84,7 @@ export default function AppNavbar() {
               }
             >
               <GoPerson size={20} strokeWidth={1.5} />
-              <span className="hidden sm:flex">Profile</span>
+              <span className="hidden md:flex">Profile</span>
             </NavLink>
           </NavbarItem>
 
@@ -100,7 +102,7 @@ export default function AppNavbar() {
               <div className="relative">
                 <GoBell size={20} strokeWidth={1.5} />
               </div>
-              <span className="hidden sm:flex">Notifications</span>
+              <span className="hidden md:flex">Notifications</span>
             </NavLink>
           </NavbarItem>
         </NavbarContent>
@@ -132,12 +134,28 @@ export default function AppNavbar() {
           >
             <DropdownSection showDivider>
               <DropdownItem
+                key="home-link"
+                startContent={<GoHome size={16} />}
+                onPress={() => navigate("/")}
+                className="flex sm:hidden text-gray-700 hover:text-amber-600 hover:bg-amber-50"
+              >
+                Home
+              </DropdownItem>
+              <DropdownItem
                 key="profile-link"
                 startContent={<GoPerson size={16} />}
                 onPress={() => navigate("/profile")}
                 className="text-gray-700 hover:text-amber-600 hover:bg-amber-50"
               >
-                My Profile
+                Profile
+              </DropdownItem>
+              <DropdownItem
+                key="notifications-link"
+                startContent={<GoBell size={16} />}
+                onPress={() => navigate("/notifications")}
+                className="flex sm:hidden text-gray-700 hover:text-amber-600 hover:bg-amber-50"
+              >
+                Notifications
               </DropdownItem>
               <DropdownItem
                 key="settings-link"
