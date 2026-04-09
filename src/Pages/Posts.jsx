@@ -32,7 +32,7 @@ export default function Posts() {
         <title>Posts | SocialHub</title>
       </Helmet>
     <PostCreation/>
-      {data?.data.data.posts?.map((post) => (
+      {data?.data?.data?.posts?.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}
     </>
