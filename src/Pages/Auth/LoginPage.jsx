@@ -67,12 +67,12 @@ export default function LoginPage() {
       <div className="mb-7.5 space-y-3">
         <h2 className="font-bold text-3xl sm:text-4xl leading-12 text-slate-700">
           Log in to social
-          <span className=" bg-linear-to-r from-amber-400 to-rose-500 bg-clip-text text-transparent">
+          <span className=" bg-linear-to-r from-blue-400 to-teal-500 bg-clip-text text-transparent">
             Hup
           </span>
         </h2>
-        <p className="text-amber-400 font-medium mt-1 flex items-center gap-2">
-          <span className="w-8 h-0.5 bg-amber-200 rounded-full"></span>
+        <p className="text-blue-400 font-medium mt-1 flex items-center gap-2">
+          <span className="w-8 h-0.5 bg-blue-200 rounded-full"></span>
           Continue your social journey.
         </p>
         {apiError && (
@@ -102,8 +102,8 @@ export default function LoginPage() {
             input: "bg-gray-50",
             inputWrapper: [
               "border-gray-200",
-              "hover:border-amber-300",
-              "focus-within:border-amber-400",
+              "hover:border-blue-300",
+              "focus-within:border-blue-400",
               "transition-colors",
               "shadow-sm",
             ].join(" "),
@@ -126,8 +126,8 @@ export default function LoginPage() {
             input: "bg-gray-50",
             inputWrapper: [
               "border-gray-200",
-              "hover:border-amber-300",
-              "focus-within:border-amber-400",
+              "hover:border-blue-300",
+              "focus-within:border-blue-400",
               "transition-colors",
               "shadow-sm",
             ].join(" "),
@@ -141,22 +141,22 @@ export default function LoginPage() {
             isDisabled={isLoading}
             color="primary"
             type="submit"
-            className="w-full bg-linear-to-r from-amber-400 to-rose-500 hover:from-amber-500 hover:to-rose-600 text-white disabled:opacity-50 disabled:cursor-not-allowed capitalize font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
+            className="w-full bg-linear-to-r from-blue-400 to-teal-500 hover:from-blue-500 hover:to-teal-600 text-white disabled:opacity-50 disabled:cursor-not-allowed capitalize font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
             endContent={isLoading && <Spinner color="white" variant="dots" />}
           >
             {isLoading ? "Loging in" : "Log In"}
           </Button>
           {/* navigate to register button */}
-          <p className="text-amber-400 font-medium mt-1 flex items-center gap-2 ">
-            <span className="w-8 h-0.5 bg-amber-200 rounded-full"></span>Don't
+          <p className="text-blue-400 font-medium mt-1 flex items-center gap-2 ">
+            <span className="w-8 h-0.5 bg-blue-200 rounded-full"></span>Don't
             have an account?
-            <span className="w-8 h-0.5 bg-amber-200 rounded-full"></span>
+            <span className="w-8 h-0.5 bg-blue-200 rounded-full"></span>
           </p>
           <Button
             onPress={() => navigate("/auth/register")}
             color="primary"
             type="button"
-            className="w-full border-2 border-amber-400 bg-white hover:bg-amber-500 hover:text-white text-amber-400  font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 "
+            className="w-full border-2 border-blue-400 bg-white hover:bg-blue-500 hover:text-white text-blue-400  font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 "
           >
             Register now!
           </Button>

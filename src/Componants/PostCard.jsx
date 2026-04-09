@@ -222,7 +222,7 @@ export default function PostCard({ post, isPostDetails = false }) {
 
         <div className="flex flex-col flex-1">
           <div className="flex items-center gap-2">
-            <p className="text-md font-semibold hover:text-amber-600 cursor-pointer transition-colors">
+            <p className="text-md font-semibold hover:text-blue-600 cursor-pointer transition-colors">
               {name || username}
             </p>
             <span className="text-xs text-gray-500">@{username}</span>
@@ -263,7 +263,7 @@ export default function PostCard({ post, isPostDetails = false }) {
                   Edit post
                 </DropdownItem>
                 <DropdownItem
-                  className="text-rose-400 hover:bg-rose-50"
+                  className="text-teal-400 hover:bg-teal-50"
                   key="delete"
                   startContent={<IoTrashOutline />}
                   onPress={() => mutateDelete()}
@@ -294,7 +294,7 @@ export default function PostCard({ post, isPostDetails = false }) {
               }}
             />
             {errors.body && (
-              <p className="text-xs text-rose-500">{errors.content.message}</p>
+              <p className="text-xs text-teal-500">{errors.content.message}</p>
             )}
 
             {/* Image section */}
@@ -309,7 +309,7 @@ export default function PostCard({ post, isPostDetails = false }) {
                   <button
                     type="button"
                     onClick={() => fileInputRef.current?.click()}
-                    className="bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-amber-50 transition-colors flex items-center gap-1.5"
+                    className="bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-blue-50 transition-colors flex items-center gap-1.5"
                   >
                     <IoPencil size={13} /> Replace image
                   </button>
@@ -320,7 +320,7 @@ export default function PostCard({ post, isPostDetails = false }) {
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="w-full border-2 border-dashed border-gray-200 rounded-xl py-4 text-sm text-gray-400 hover:border-amber-400 hover:text-amber-500 transition-colors flex items-center justify-center gap-2"
+                className="w-full border-2 border-dashed border-gray-200 rounded-xl py-4 text-sm text-gray-400 hover:border-blue-400 hover:text-blue-500 transition-colors flex items-center justify-center gap-2"
               >
                 <IoPencil size={14} /> Add image
               </button>
@@ -341,14 +341,14 @@ export default function PostCard({ post, isPostDetails = false }) {
                 type="button"
                 onClick={toggleEdit}
                 disabled={isEditing}
-                className="border border-gray-300 rounded-full px-3 py-1 text-sm font-semibold hover:bg-amber-50 transition-colors cursor-pointer disabled:opacity-50"
+                className="border border-gray-300 rounded-full px-3 py-1 text-sm font-semibold hover:bg-blue-50 transition-colors cursor-pointer disabled:opacity-50"
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={isEditing}
-                className="bg-amber-500 rounded-full px-3.5 py-1 text-sm text-white font-semibold hover:bg-amber-600 transition-colors cursor-pointer disabled:opacity-60 flex items-center gap-1.5"
+                className="bg-blue-500 rounded-full px-3.5 py-1 text-sm text-white font-semibold hover:bg-blue-600 transition-colors cursor-pointer disabled:opacity-60 flex items-center gap-1.5"
               >
                 {isEditing ? "Saving..." : "Save"}
               </button>
@@ -376,7 +376,7 @@ export default function PostCard({ post, isPostDetails = false }) {
         <div className="flex items-center justify-between py-2 text-sm">
           <div className="flex items-center gap-2">
             <div className="flex -space-x-2">
-              <div className="w-6 h-6 rounded-full bg-linear-to-br from-amber-400 to-rose-400 flex items-center justify-center">
+              <div className="w-6 h-6 rounded-full bg-linear-to-br from-blue-400 to-teal-400 flex items-center justify-center">
                 <FiHeart size={12} className="text-white" />
               </div>
             </div>
@@ -384,16 +384,16 @@ export default function PostCard({ post, isPostDetails = false }) {
           </div>
 
           <div className="flex gap-3 text-gray-500">
-            <button className="hover:text-amber-600 transition-colors flex items-center gap-1">
+            <button className="hover:text-blue-600 transition-colors flex items-center gap-1">
               <AiOutlineComment size={14} />
               {commentsCount}
             </button>
             <span>•</span>
-            <button className="hover:text-rose-600 transition-colors flex items-center gap-1">
+            <button className="hover:text-teal-600 transition-colors flex items-center gap-1">
               <AiOutlineShareAlt size={14} />
               {sharesCount}
             </button>
-            <button className="text-rose-600 hover:bg-rose-50 transition-background p-1 rounded-md">
+            <button className="text-teal-600 hover:bg-teal-50 transition-background p-1 rounded-md">
               <Link to={`post-details/${id}`}>View Details</Link>
             </button>
           </div>
@@ -410,8 +410,8 @@ export default function PostCard({ post, isPostDetails = false }) {
             variant="light"
             className={`flex-1 gap-2 transition-all ${
               isLiked
-                ? "text-amber-600 bg-amber-50"
-                : "text-gray-600 hover:text-amber-600 hover:bg-amber-50"
+                ? "text-blue-600 bg-blue-50"
+                : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
             }`}
             startContent={
               isLiked ? <AiFillHeart size={18} /> : <AiOutlineHeart size={18} />
@@ -423,7 +423,7 @@ export default function PostCard({ post, isPostDetails = false }) {
           <Button
             size="sm"
             variant="light"
-            className="flex-1 gap-2 text-gray-600 hover:text-rose-600 hover:bg-rose-50 transition-all"
+            className="flex-1 gap-2 text-gray-600 hover:text-teal-600 hover:bg-teal-50 transition-all"
             startContent={<AiOutlineComment size={18} />}
             onPress={toggleCommentInput}
           >
@@ -433,7 +433,7 @@ export default function PostCard({ post, isPostDetails = false }) {
           <Button
             size="sm"
             variant="light"
-            className="flex-1 gap-2 text-gray-600 hover:text-rose-600 hover:bg-rose-50 transition-all"
+            className="flex-1 gap-2 text-gray-600 hover:text-teal-600 hover:bg-teal-50 transition-all"
             startContent={<AiOutlineShareAlt size={18} />}
           >
             Share

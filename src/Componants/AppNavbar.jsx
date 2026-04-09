@@ -20,7 +20,7 @@ import { FaBars } from "react-icons/fa";
 import { UserContext } from "../context/UserContext";
 
 export default function AppNavbar() {
-  const { userToken, setuserToken } = useContext(AuthContext);
+  const {  setuserToken } = useContext(AuthContext);
   const { userData } = useContext(UserContext);
   const { name, photo } = userData || {};
   const navigate = useNavigate();
@@ -41,11 +41,11 @@ export default function AppNavbar() {
       {/* Logo/Brand */}
       <NavbarBrand>
         <div className="flex items-center gap-1">
-          <div className="w-8 h-8 rounded-xl bg-linear-to-br from-amber-500 to-rose-500 flex items-center justify-center shadow-md">
+          <div className="w-8 h-8 rounded-xl bg-linear-to-br from-blue-500 to-teal-500 flex items-center justify-center shadow-md">
             <span className="text-white font-bold text-lg">S</span>
           </div>
           <p className="font-bold text-xl text-gray-800">
-            Social<span className="bg-linear-to-r from-amber-400 to-rose-400 bg-clip-text text-transparent ">Hub</span>
+            Social<span className="bg-linear-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent ">Hub</span>
           </p>
         </div>
       </NavbarBrand>
@@ -62,7 +62,7 @@ export default function AppNavbar() {
               className={({ isActive }) =>
                 `flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-200 ${
                   isActive
-                    ? "text-amber-600 bg-white shadow-md"
+                    ? "text-blue-600 bg-white shadow-md"
                     : "text-gray-600 hover:bg-white hover:text-gray-900 hover:shadow-sm"
                 }`
               }
@@ -78,7 +78,7 @@ export default function AppNavbar() {
               className={({ isActive }) =>
                 `flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-200 ${
                   isActive
-                    ? "text-amber-600 bg-white shadow-md"
+                    ? "text-blue-600 bg-white shadow-md"
                     : "text-gray-600 hover:bg-white hover:text-gray-900 hover:shadow-sm"
                 }`
               }
@@ -94,7 +94,7 @@ export default function AppNavbar() {
               className={({ isActive }) =>
                 `flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-200 ${
                   isActive
-                    ? "text-amber-600 bg-white shadow-md"
+                    ? "text-blue-600 bg-white shadow-md"
                     : "text-gray-600 hover:bg-white hover:text-gray-900 hover:shadow-sm"
                 }`
               }
@@ -117,8 +117,8 @@ export default function AppNavbar() {
               <Avatar
                 isBordered
                 as="button"
-                className="transition-transform hover:scale-105 border-2 border-amber-200 shadow-sm"
-                color="warning"
+                className="transition-transform hover:scale-105 border-2 border-blue-200 shadow-sm"
+                color="primary"
                 name="Jason Hughes"
                 size="sm"
                 src={photo||"https://placehold.co/40x40/png"}
@@ -137,7 +137,7 @@ export default function AppNavbar() {
                 key="home-link"
                 startContent={<GoHome size={16} />}
                 onPress={() => navigate("/")}
-                className="flex sm:hidden text-gray-700 hover:text-amber-600 hover:bg-amber-50"
+                className="flex sm:hidden text-gray-700 hover:text-blue-600 hover:bg-blue-50"
               >
                 Home
               </DropdownItem>
@@ -145,7 +145,7 @@ export default function AppNavbar() {
                 key="profile-link"
                 startContent={<GoPerson size={16} />}
                 onPress={() => navigate("/profile")}
-                className="text-gray-700 hover:text-amber-600 hover:bg-amber-50"
+                className="text-gray-700 hover:text-blue-600 hover:bg-blue-50"
               >
                 Profile
               </DropdownItem>
@@ -153,7 +153,7 @@ export default function AppNavbar() {
                 key="notifications-link"
                 startContent={<GoBell size={16} />}
                 onPress={() => navigate("/notifications")}
-                className="flex sm:hidden text-gray-700 hover:text-amber-600 hover:bg-amber-50"
+                className="flex sm:hidden text-gray-700 hover:text-blue-600 hover:bg-blue-50"
               >
                 Notifications
               </DropdownItem>
@@ -161,7 +161,7 @@ export default function AppNavbar() {
                 key="settings-link"
                 startContent={<GoGear size={16} />}
                 onPress={() => navigate("/settings")}
-                className="text-gray-700 hover:text-amber-600 hover:bg-amber-50"
+                className="text-gray-700 hover:text-blue-600 hover:bg-blue-50"
               >
                 Account Settings
               </DropdownItem>

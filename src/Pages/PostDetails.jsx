@@ -24,7 +24,7 @@ export default function PostDetails() {
     return <DetailsLoader />;
   }
   if (isError) {
-    return<div className="flex justify-center items-center min-h-screen"> <h1 className="bg-white/80 p-3 rounded-2xl text-rose-900 font-semibold text-2xl">Failed to load post details</h1></div>;
+    return<div className="flex justify-center items-center min-h-screen"> <h1 className="bg-white/80 p-3 rounded-2xl text-teal-900 font-semibold text-2xl">Failed to load post details</h1></div>;
   }
 
   return <> 

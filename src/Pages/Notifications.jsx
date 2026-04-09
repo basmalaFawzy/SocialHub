@@ -71,10 +71,10 @@ export default function Notifications() {
     return (
       <div className="flex justify-center items-center min-h-screen">
         <div className="animate-pulse flex flex-col items-center gap-4">
-          <div className="w-12 h-12 flex justify-center items-center rounded-full bg-linear-to-r from-amber-200 to-rose-200">
-            <BsBell className="text-amber-400 text-2xl mx-auto" />
+          <div className="w-12 h-12 flex justify-center items-center rounded-full bg-linear-to-r from-blue-200 to-teal-200">
+            <BsBell className="text-blue-400 text-2xl mx-auto" />
           </div>
-          <p className="text-amber-600 font-medium">Loading notifications...</p>
+          <p className="text-blue-600 font-medium">Loading notifications...</p>
         </div>
       </div>
     );
@@ -83,12 +83,12 @@ export default function Notifications() {
   if (isError) {
     return (
       <div className="flex justify-center items-center min-h-100">
-        <div className="bg-rose-50 border border-rose-200 rounded-2xl p-8 text-center max-w-md">
-          <BsBell className="text-rose-400 text-5xl mx-auto mb-4" />
-          <h3 className="text-xl font-bold text-rose-800 mb-2">
+        <div className="bg-teal-50 border border-teal-200 rounded-2xl p-8 text-center max-w-md">
+          <BsBell className="text-teal-400 text-5xl mx-auto mb-4" />
+          <h3 className="text-xl font-bold text-teal-800 mb-2">
             Failed to load
           </h3>
-          <p className="text-rose-600">
+          <p className="text-teal-600">
             Couldn't load notifications. Please try again.
           </p>
         </div>
@@ -98,15 +98,17 @@ export default function Notifications() {
 
   const notifications = data?.data.data.notifications || [];
   const unreadCount = unreadnotifiCount?.data.data.unreadCount;
+  console.log(notifications);
+  
   return (
     <>
       <Helmet>
         <title>Notifications | SocialHub</title>
       </Helmet>
 
-      <Card className="w-full lg:max-w-250 mx-auto border border-amber-100 shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+      <Card className="w-full lg:max-w-250 mx-auto border border-blue-100 shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
         {/* Header with linear */}
-        <CardHeader className="bg-linear-to-r from-amber-400 to-rose-400 px-6 py-4">
+        <CardHeader className="bg-linear-to-r from-blue-400 to-teal-400 px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="bg-white/20 p-2 rounded-xl backdrop-blur-sm">
@@ -123,37 +125,37 @@ export default function Notifications() {
         </CardHeader>
 
         {/* Tabs */}
-        <div className="flex border-b border-amber-100 px-4 pt-2">
-          <button className="px-4 py-2 text-sm font-medium text-amber-600 border-b-2 border-amber-500">
+        <div className="flex border-b border-blue-100 px-4 pt-2">
+          <button className="px-4 py-2 text-sm font-medium text-blue-600 border-b-2 border-blue-500">
             All
           </button>
-          <button className="px-4 py-2 flex gap-2 justify-center items-center  text-sm font-medium text-gray-500 hover:text-amber-600 transition-colors">
+          <button className="px-4 py-2 flex gap-2 justify-center items-center  text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors">
             Unread
             {/* Unread badge */}
-            {unreadCount > 0 && (
-              <span className="bg-rose-100/80 text-rose-500 border-2 border-white w-10 h-7 flex justify-center items-center rounded-2xl">
+            {unreadCount >= 0 && (
+              <span className="bg-blue-100/80 text-blue-500 border-2 border-white w-10 h-7 flex justify-center items-center rounded-2xl">
                 <div>{unreadCount} </div>
               </span>
             )}
           </button>
-          <button className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-amber-600 transition-colors ml-auto">
+          <button className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors ml-auto">
             <BsCheck2Circle size={18} />
           </button>
         </div>
 
         <CardBody className="p-0">
-          {notifications ? (
-            <div className="divide-y divide-amber-100">
+          {notifications.length>0 ? (
+            <div className="divide-y divide-blue-100">
               {notifications.map((notif, index) => (
                 <div
                   key={notif._id || index}
-                  className={`flex items-start gap-4 p-4 hover:bg-amber-50/50 transition-colors cursor-pointer relative group ${
-                    !notif.read ? "bg-amber-50/30" : ""
+                  className={`flex items-start gap-4 p-4 hover:bg-blue-50/50 transition-colors cursor-pointer relative group ${
+                    !notif.read ? "bg-blue-50/30" : ""
                   }`}
                 >
                   {/* Unread indicator */}
                   {!notif.isRead && (
-                    <div className="absolute left-2 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-amber-500"></div>
+                    <div className="absolute left-2 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-blue-500"></div>
                   )}
 
                   {/* Avatar with icon overlay */}
@@ -164,14 +166,14 @@ export default function Notifications() {
                         "https://avatars.githubusercontent.com/u/86160567?s=200&v=4"
                       }
                       size="md"
-                      className="border-2 border-amber-100"
+                      className="border-2 border-blue-100"
                     />
                     <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-white shadow-md flex items-center justify-center">
                       {notif.type === "like_post" && (
-                        <AiOutlineHeart className="text-rose-500 text-xs" />
+                        <AiOutlineHeart className="text-teal-500 text-xs" />
                       )}
                       {notif.type === "comment_post" && (
-                        <AiOutlineComment className="text-amber-500 text-xs" />
+                        <AiOutlineComment className="text-blue-500 text-xs" />
                       )}
                       {notif.type === "share_post" && (
                         <AiOutlineShareAlt className="text-teal-500 text-xs" />
@@ -210,7 +212,7 @@ export default function Notifications() {
 
                     {/* Action buttons */}
                     <div className="flex items-center gap-3 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <button className="text-xs text-amber-600 hover:text-amber-700 font-medium">
+                      <button className="text-xs text-blue-600 hover:text-blue-700 font-medium">
                         Mark as read
                       </button>
                       <span className="w-1 h-1 rounded-full bg-gray-300"></span>
@@ -226,8 +228,8 @@ export default function Notifications() {
             </div>
           ) : (
             <div className="text-center py-16 px-4">
-              <div className="w-20 h-20 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BsBell className="text-amber-300 text-4xl" />
+              <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <BsBell className="text-blue-300 text-4xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-1">
                 No notifications yet
@@ -241,8 +243,8 @@ export default function Notifications() {
 
         {/* Footer */}
         {notifications.length > 0 && (
-          <div className="border-t border-amber-100 p-3 text-center">
-            <button onClick={()=>mutate()} className="text-sm text-amber-600 hover:text-amber-700 font-medium cursor-pointer">
+          <div className="border-t border-blue-100 p-3 text-center">
+            <button onClick={()=>mutate()} className="text-sm text-blue-600 hover:text-blue-700 font-medium cursor-pointer">
               Mark all as read
             </button>
           </div>

@@ -153,10 +153,10 @@ export default function Comment({ postId, comment, creator, isPostDetails }) {
         <Avatar
           src={creator.photo}
           size="sm"
-          className="border-2 border-amber-100"
+          className="border-2 border-blue-100"
         />
         <div className="flex-1">
-          <Card className="bg-amber-50 w-full *:p-1 px-2 py-2.5 rounded-2xl border border-amber-100">
+          <Card className="bg-blue-50 w-full *:p-1 px-2 py-2.5 rounded-2xl border border-blue-100">
             <CardHeader className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-semibold text-gray-800">
@@ -189,7 +189,7 @@ export default function Comment({ postId, comment, creator, isPostDetails }) {
                       Edit comment
                     </DropdownItem>
                     <DropdownItem
-                      className="text-rose-400 hover:bg-rose-50"
+                      className="text-teal-400 hover:bg-teal-50"
                       key="delete"
                       startContent={<IoTrashOutline />}
                       onPress={() => mutate()}
@@ -219,7 +219,7 @@ export default function Comment({ postId, comment, creator, isPostDetails }) {
                     }}
                   />
                   {errors.content && (
-                    <p className="text-xs text-rose-500">
+                    <p className="text-xs text-teal-500">
                       {errors.content.message}
                     </p>
                   )}
@@ -236,7 +236,7 @@ export default function Comment({ postId, comment, creator, isPostDetails }) {
                         <button
                           type="button"
                           onClick={() => fileInputRef.current?.click()}
-                          className="bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-amber-50 transition-colors flex items-center gap-1.5"
+                          className="bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-blue-50 transition-colors flex items-center gap-1.5"
                         >
                           <IoPencil size={13} /> Replace image
                         </button>
@@ -246,7 +246,7 @@ export default function Comment({ postId, comment, creator, isPostDetails }) {
                     <button
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
-                      className="w-full border-2 border-dashed border-gray-200 rounded-xl py-4 text-sm text-gray-400 hover:border-amber-400 hover:text-amber-500 transition-colors flex items-center justify-center gap-2"
+                      className="w-full border-2 border-dashed border-gray-200 rounded-xl py-4 text-sm text-gray-400 hover:border-blue-400 hover:text-blue-500 transition-colors flex items-center justify-center gap-2"
                     >
                       <IoPencil size={14} /> Add image
                     </button>
@@ -265,14 +265,14 @@ export default function Comment({ postId, comment, creator, isPostDetails }) {
                       type="button"
                       onClick={toggleEdit}
                       disabled={isEditing}
-                      className="border border-gray-300 rounded-full px-3 py-1 text-sm font-semibold hover:bg-amber-50 transition-colors cursor-pointer disabled:opacity-50"
+                      className="border border-gray-300 rounded-full px-3 py-1 text-sm font-semibold hover:bg-blue-50 transition-colors cursor-pointer disabled:opacity-50"
                     >
                       Cancel
                     </button>
                     <button
                       type="submit"
                       disabled={isEditing}
-                      className="bg-amber-500 rounded-full px-3.5 py-1 text-sm text-white font-semibold hover:bg-amber-600 transition-colors cursor-pointer disabled:opacity-60 flex items-center gap-1.5"
+                      className="bg-blue-500 rounded-full px-3.5 py-1 text-sm text-white font-semibold hover:bg-blue-600 transition-colors cursor-pointer disabled:opacity-60 flex items-center gap-1.5"
                     >
                       {isEditing ? "Saving..." : "Save"}
                     </button>
@@ -296,10 +296,10 @@ export default function Comment({ postId, comment, creator, isPostDetails }) {
           </Card>
 
           <div className="flex items-center gap-4 mt-1 ml-2">
-            <button className="text-xs text-gray-500 hover:text-amber-600 transition-colors">
+            <button className="text-xs text-gray-500 hover:text-blue-600 transition-colors">
               Like
             </button>
-            <button className="text-xs text-gray-500 hover:text-rose-600 transition-colors">
+            <button className="text-xs text-gray-500 hover:text-teal-600 transition-colors">
               Reply
             </button>
           </div>

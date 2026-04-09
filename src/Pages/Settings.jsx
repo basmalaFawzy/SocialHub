@@ -81,14 +81,14 @@ export default function Settings() {
     <>
       <Card className="w-full lg:max-w-200 mx-auto p-3 hover:shadow-lg transition-shadow duration-300 border border-gray-100">
         <CardHeader className="flex gap-4 items-center">
-          <div className="text-amber-500 bg-amber-100 p-3 rounded-full">
+          <div className="text-blue-500 bg-blue-100 p-3 rounded-full">
             <GoKey size={22} />
           </div>
           <div>
             <h2 className="font-bold text-gray-800 text-2xl sm:text-3xl lg:text-4xl leading-12">
               Change Password
             </h2>
-            <p className="text-amber-400 font-medium mt-1 flex items-center gap-2">
+            <p className="text-blue-400 font-medium mt-1 flex items-center gap-2">
               Keep your account secure by using a strong password.
             </p>
           </div>
@@ -115,8 +115,8 @@ export default function Settings() {
                   inputWrapper: [
                     "bg-gray-50",
                     "border-gray-200",
-                    "hover:border-amber-300",
-                    "focus-within:border-amber-400",
+                    "hover:border-blue-300",
+                    "focus-within:border-blue-400",
                     "transition-colors",
                     "shadow-sm",
                   ].join(" "),
@@ -144,8 +144,8 @@ export default function Settings() {
                   inputWrapper: [
                     "bg-gray-50",
                     "border-gray-200",
-                    "hover:border-amber-300",
-                    "focus-within:border-amber-400",
+                    "hover:border-blue-300",
+                    "focus-within:border-blue-400",
                     "transition-colors",
                     "shadow-sm",
                   ].join(" "),
@@ -173,8 +173,8 @@ export default function Settings() {
                   inputWrapper: [
                     "bg-gray-50",
                     "border-gray-200",
-                    "hover:border-amber-300",
-                    "focus-within:border-amber-400",
+                    "hover:border-blue-300",
+                    "focus-within:border-blue-400",
                     "transition-colors",
                     "shadow-sm",
                   ].join(" "),
@@ -188,7 +188,7 @@ export default function Settings() {
               isDisabled={isPending}
               color="primary"
               type="submit"
-              className="w-full bg-linear-to-r from-amber-400 to-rose-500 hover:from-amber-500 hover:to-rose-600 text-white disabled:opacity-50 disabled:cursor-not-allowed capitalize font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
+              className="w-full bg-linear-to-r from-blue-400 to-teal-500 hover:from-blue-500 hover:to-teal-600 text-white disabled:opacity-50 disabled:cursor-not-allowed capitalize font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
             >
               Update
             </Button>

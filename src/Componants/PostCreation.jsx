@@ -68,13 +68,13 @@ export default function PostCreation() {
   });
   return (
     <div>
-      <Card className="w-full lg:max-w-200 mx-auto mb-6 border border-amber-100 shadow-sm">
+      <Card className="w-full lg:max-w-200 mx-auto mb-6 border border-blue-100 shadow-sm">
         {/* Header  */}
         <CardHeader className="flex items-center gap-3 px-4 py-3">
           <Avatar
             src={photo || "https://avatars.githubusercontent.com/u/86160567?s=200&v=4"}
             size="md"
-            className="border-2 border-amber-200"
+            className="border-2 border-blue-200"
           />
 
           <div>
@@ -108,11 +108,11 @@ export default function PostCreation() {
               <img
                 src={selectedImage}
                 alt="Preview"
-                className="max-h-48 rounded-lg border border-amber-200"
+                className="max-h-48 rounded-lg border border-blue-200"
               />
               <button
                 onClick={() => handelImageRemove()}
-                className="absolute -top-2 -right-2 bg-rose-500 text-white rounded-full p-1 hover:bg-rose-600 transition-colors shadow-md cursor-pointer"
+                className="absolute -top-2 -right-2 bg-teal-500 text-white rounded-full p-1 hover:bg-teal-600 transition-colors shadow-md cursor-pointer"
               >
                 <MdClose size={14} />
               </button>
@@ -123,7 +123,7 @@ export default function PostCreation() {
         {/* Options */}
         <div className="px-4 py-2 flex flex-wrap items-center gap-4">
           <div className="flex items-center gap-2">
-            <label className="flex items-center gap-1 text-sm text-gray-600 hover:text-amber-600 transition-colors cursor-pointer">
+            <label className="flex items-center gap-1 text-sm text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">
               <input
                 type="file"
                 accept="image/*"
@@ -131,23 +131,23 @@ export default function PostCreation() {
                 onChange={handleImageUpload}
                 ref={imageInputRef}
               />
-              <MdOutlineAddPhotoAlternate className="text-amber-600 text-xl" />
+              <MdOutlineAddPhotoAlternate className="text-blue-600 text-xl" />
               <span className="text-xs">Photo/video</span>
             </label>
 
-            <button className="flex items-center gap-1 text-sm text-gray-600 hover:text-rose-600 transition-colors cursor-pointer">
-              <FaRegSmile className="text-rose-500 text-xl" />
+            <button className="flex items-center gap-1 text-sm text-gray-600 hover:text-teal-600 transition-colors cursor-pointer">
+              <FaRegSmile className="text-teal-500 text-xl" />
               <span className="text-xs">Feeling/activity</span>
             </button>
           </div>
         </div>
 
-        <Divider className="bg-amber-100" />
+        <Divider className="bg-blue-100" />
 
         {/* Post button */}
         <CardFooter className="px-4 py-3">
           <Button
-            className="w-full bg-linear-to-r from-amber-500 to-rose-500 text-white font-medium shadow-sm hover:shadow-md transition-all hover:scale-[1.01] disabled:opacity-50"
+            className="w-full bg-linear-to-r from-blue-500 to-teal-500 text-white font-medium shadow-sm hover:shadow-md transition-all hover:scale-[1.01] disabled:opacity-50"
             size="lg"
             isDisabled={!postContent && !selectedImage}
             onPress={() => mutate()}

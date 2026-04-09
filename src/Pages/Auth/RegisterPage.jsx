@@ -99,14 +99,14 @@ export default function RegisterPage() {
 
       {/* form header */}
       <div className="mb-8">
-        <h2 className="font-bold text-3xl sm:text-4xl leading-12 bg-linear-to-r from-amber-400 to-rose-500 bg-clip-text text-transparent">
+        <h2 className="font-bold text-3xl sm:text-4xl leading-12 bg-linear-to-r from-blue-400 to-teal-500 bg-clip-text text-transparent">
           Register
         </h2>
         <h3 className="text-xl sm:text-2xl font-semibold mt-2 text-slate-800">
           Create a new account
         </h3>
-        <p className="text-amber-400 font-medium mt-1 flex items-center gap-2">
-          <span className="w-8 h-0.5 bg-amber-200 rounded-full"></span>
+        <p className="text-blue-400 font-medium mt-1 flex items-center gap-2">
+          <span className="w-8 h-0.5 bg-blue-200 rounded-full"></span>
           It's quick and easy
         </p>
         {apiError && (
@@ -135,8 +135,8 @@ export default function RegisterPage() {
             input: "bg-gray-50",
             inputWrapper: [
               "border-gray-200",
-              "hover:border-amber-300",
-              "focus-within:border-amber-400",
+              "hover:border-blue-300",
+              "focus-within:border-blue-400",
               "transition-colors",
               "shadow-sm",
             ].join(" "),
@@ -159,8 +159,8 @@ export default function RegisterPage() {
             input: "bg-gray-50",
             inputWrapper: [
               "border-gray-200",
-              "hover:border-amber-300",
-              "focus-within:border-amber-400",
+              "hover:border-blue-300",
+              "focus-within:border-blue-400",
               "transition-colors",
               "shadow-sm",
             ].join(" "),
@@ -183,8 +183,8 @@ export default function RegisterPage() {
             input: "bg-gray-50",
             inputWrapper: [
               "border-gray-200",
-              "hover:border-amber-300",
-              "focus-within:border-amber-400",
+              "hover:border-blue-300",
+              "focus-within:border-blue-400",
               "transition-colors",
               "shadow-sm",
             ].join(" "),
@@ -206,10 +206,10 @@ export default function RegisterPage() {
             trigger: [
               "bg-gray-50",
               "border-gray-200",
-              "hover:border-amber-300",
-              "data-[focus=true]:border-amber-400",
+              "hover:border-blue-300",
+              "data-[focus=true]:border-blue-400",
               "data-[focus=true]:ring-2",
-              "data-[focus=true]:ring-amber-200",
+              "data-[focus=true]:ring-blue-200",
               "transition-colors",
               "shadow-sm",
               "h-12",
@@ -225,13 +225,13 @@ export default function RegisterPage() {
         >
           <SelectItem
             key="male"
-            className="hover:bg-amber-50 data-[selectable=true]:focus:bg-amber-100"
+            className="hover:bg-blue-50 data-[selectable=true]:focus:bg-blue-100"
           >
             Male
           </SelectItem>
           <SelectItem
             key="female"
-            className="hover:bg-amber-50 data-[selectable=true]:focus:bg-amber-100"
+            className="hover:bg-blue-50 data-[selectable=true]:focus:bg-blue-100"
           >
             Female
           </SelectItem>
@@ -249,8 +249,8 @@ export default function RegisterPage() {
             input: "bg-gray-50",
             inputWrapper: [
               "border-gray-200",
-              "hover:border-amber-300",
-              "focus-within:border-amber-400",
+              "hover:border-blue-300",
+              "focus-within:border-blue-400",
               "transition-colors",
               "shadow-sm",
             ].join(" "),
@@ -273,8 +273,8 @@ export default function RegisterPage() {
             input: "bg-gray-50",
             inputWrapper: [
               "border-gray-200",
-              "hover:border-amber-300",
-              "focus-within:border-amber-400",
+              "hover:border-blue-300",
+              "focus-within:border-blue-400",
               "transition-colors",
               "shadow-sm",
             ].join(" "),
@@ -297,8 +297,8 @@ export default function RegisterPage() {
             input: "bg-gray-50",
             inputWrapper: [
               "border-gray-200",
-              "hover:border-amber-300",
-              "focus-within:border-amber-400",
+              "hover:border-blue-300",
+              "focus-within:border-blue-400",
               "transition-colors",
               "shadow-sm",
             ].join(" "),
@@ -311,7 +311,7 @@ export default function RegisterPage() {
           isDisabled={isLoading}
           color="primary"
           type="submit"
-          className="w-full bg-linear-to-r from-amber-400 to-rose-500 hover:from-amber-500 hover:to-rose-600 text-white disabled:opacity-50 disabled:cursor-not-allowed capitalize font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
+          className="w-full bg-linear-to-r from-blue-400 to-teal-500 hover:from-blue-500 hover:to-teal-600 text-white disabled:opacity-50 disabled:cursor-not-allowed capitalize font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
           endContent={isLoading && <Spinner color="white" variant="dots" />}
         >
           {isLoading ? "Creating account" : " Create new account"}
@@ -321,7 +321,7 @@ export default function RegisterPage() {
           onPress={() => navigate("/auth/login")}
           color="primary"
           type="button"
-          className="w-full border-2 border-amber-400 bg-white hover:bg-amber-500 hover:text-white text-amber-400  font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 "
+          className="w-full border-2 border-blue-400 bg-white hover:bg-blue-500 hover:text-white text-blue-400  font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 "
         >
           I already have an account
         </Button>

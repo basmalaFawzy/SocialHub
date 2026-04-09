@@ -43,7 +43,7 @@ export default function Profile({ myPosts = 4, savedPosts = 0 }) {
   }
   if (isError) {
     return (
-      <h1 className="text-rose-800 bg-white/90 p-3 rounded-2xl text-2xl text-center">
+      <h1 className="text-teal-800 bg-white/90 p-3 rounded-2xl text-2xl text-center">
         Faild to load profile
       </h1>
     );
@@ -54,7 +54,7 @@ export default function Profile({ myPosts = 4, savedPosts = 0 }) {
   };
   const coverPhotoStyle = data?.data.data.user.cover
     ? "  bg-[url(${data?.data.data.user.cover})] bg-center bg-cover"
-    : "bg-linear-150 from-amber-400 to-rose-400";
+    : "bg-linear-150 from-blue-400 to-teal-400";
 
   return (
     <>
@@ -62,11 +62,11 @@ export default function Profile({ myPosts = 4, savedPosts = 0 }) {
         <title>Profile | SocialHub</title>
       </Helmet>
       {/* profile card */}
-      <Card className="w-full lg:max-w-200 mx-auto mb-4 border border-amber-100 shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+      <Card className="w-full lg:max-w-200 mx-auto mb-4 border border-blue-100 shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
         {/* Header */}
 
         <div
-          className={`relative h-40 bg-linear-to-r from-amber-400 to-rose-400 ${coverPhotoStyle}`}
+          className={`relative h-40 bg-linear-to-r from-blue-400 to-teal-400 ${coverPhotoStyle}`}
         >
           <div className="absolute -bottom-10 left-4 ">
             <Avatar
@@ -74,7 +74,7 @@ export default function Profile({ myPosts = 4, savedPosts = 0 }) {
               className="size-30 border-4 border-white shadow-lg"
             />
             {isEdit && (
-              <label className="absolute -bottom-2 right-1 bg-amber-500 text-white p-2 rounded-full z-1 cursor-pointer">
+              <label className="absolute -bottom-2 right-1 bg-blue-500 text-white p-2 rounded-full z-1 cursor-pointer">
                 <CiCamera size={20} />
                 <input type="file" className="hidden" />
               </label>
@@ -101,14 +101,14 @@ export default function Profile({ myPosts = 4, savedPosts = 0 }) {
           </div>
 
           {/* Bio/Member info */}
-          <Chip className="mb-3 bg-amber-50/50 p-2 rounded-2xl border border-amber-100 fit-content ">
+          <Chip className="mb-3 bg-blue-50/50 p-2 rounded-2xl border border-blue-100 fit-content ">
             <p className="text-sm text-gray-700 flex items-center gap-2">
-              <FaRegUser className="text-amber-500" size={14} />
+              <FaRegUser className="text-blue-500" size={14} />
               Route Posts member
             </p>
           </Chip>
 
-          <Divider className="bg-amber-100 my-2" />
+          <Divider className="bg-blue-100 my-2" />
 
           {/* About section */}
           <div className="space-y-2 mb-3">
@@ -117,7 +117,7 @@ export default function Profile({ myPosts = 4, savedPosts = 0 }) {
             </h3>
 
             <div className="flex items-center gap-2 text-sm text-gray-700">
-              <HiOutlineMail className="text-amber-500" size={16} />
+              <HiOutlineMail className="text-blue-500" size={16} />
               <span>{data?.data.data.user.email}</span>
             </div>
 
@@ -127,14 +127,14 @@ export default function Profile({ myPosts = 4, savedPosts = 0 }) {
             </div>
           </div>
 
-          <Divider className="bg-amber-100 my-2" />
+          <Divider className="bg-blue-100 my-2" />
 
           {/* Stats grid */}
           <div className="grid grid-cols-3 gap-3 mb-3">
             {/* Followers */}
-            <div className="text-center p-2 rounded-lg hover:bg-amber-50 transition-colors">
+            <div className="text-center p-2 rounded-lg hover:bg-blue-50 transition-colors">
               <div className="flex justify-center mb-1">
-                <RiUserFollowLine className="text-amber-500" size={20} />
+                <RiUserFollowLine className="text-blue-500" size={20} />
               </div>
               <p className="text-lg font-bold text-gray-800">
                 {data?.data.data.user.followersCount}
@@ -143,9 +143,9 @@ export default function Profile({ myPosts = 4, savedPosts = 0 }) {
             </div>
 
             {/* Following */}
-            <div className="text-center p-2 rounded-lg hover:bg-amber-50 transition-colors">
+            <div className="text-center p-2 rounded-lg hover:bg-blue-50 transition-colors">
               <div className="flex justify-center mb-1">
-                <RiUserUnfollowLine className="text-rose-500" size={20} />
+                <RiUserUnfollowLine className="text-teal-500" size={20} />
               </div>
               <p className="text-lg font-bold text-gray-800">
                 {data?.data.data.user.followingCount}
@@ -154,9 +154,9 @@ export default function Profile({ myPosts = 4, savedPosts = 0 }) {
             </div>
 
             {/* Bookmarks */}
-            <div className="text-center p-2 rounded-lg hover:bg-amber-50 transition-colors">
+            <div className="text-center p-2 rounded-lg hover:bg-blue-50 transition-colors">
               <div className="flex justify-center mb-1">
-                <FaBookmark className="text-amber-500" size={18} />
+                <FaBookmark className="text-blue-500" size={18} />
               </div>
               <p className="text-lg font-bold text-gray-800">
                 {data?.data.data.user.bookmarksCount}
@@ -165,14 +165,14 @@ export default function Profile({ myPosts = 4, savedPosts = 0 }) {
             </div>
           </div>
 
-          <Divider className="bg-amber-100 my-2" />
+          <Divider className="bg-blue-100 my-2" />
 
           {/* Post stats */}
           <div className="grid grid-cols-2 gap-3">
             {/* My Posts */}
-            <div className="flex items-center gap-2 p-2 rounded-lg bg-linear-to-r from-amber-50 to-rose-50/30 border border-amber-100">
-              <div className="p-2 rounded-full bg-amber-100">
-                <MdPostAdd className="text-amber-600" size={18} />
+            <div className="flex items-center gap-2 p-2 rounded-lg bg-linear-to-r from-blue-50 to-teal-50/30 border border-blue-100">
+              <div className="p-2 rounded-full bg-blue-100">
+                <MdPostAdd className="text-blue-600" size={18} />
               </div>
               <div>
                 <p className="text-lg font-bold text-gray-800">{userPosts?.data.data.posts.length}</p>
@@ -181,9 +181,9 @@ export default function Profile({ myPosts = 4, savedPosts = 0 }) {
             </div>
 
             {/* Saved Posts */}
-            <div className="flex items-center gap-2 p-2 rounded-lg bg-linear-to-r from-amber-50 to-rose-50/30 border border-amber-100">
-              <div className="p-2 rounded-full bg-rose-100">
-                <MdBookmark className="text-rose-500" size={18} />
+            <div className="flex items-center gap-2 p-2 rounded-lg bg-linear-to-r from-blue-50 to-teal-50/30 border border-blue-100">
+              <div className="p-2 rounded-full bg-teal-100">
+                <MdBookmark className="text-teal-500" size={18} />
               </div>
               <div>
                 <p className="text-lg font-bold text-gray-800">{savedPosts}</p>
@@ -195,7 +195,7 @@ export default function Profile({ myPosts = 4, savedPosts = 0 }) {
           {/* Edit Profile Button */}
           <button
             onClick={() => toggleEdit()}
-            className="w-full mt-4 py-2 bg-linear-to-r from-amber-500 to-rose-500 text-white rounded-lg font-medium text-sm hover:shadow-md transition-all hover:scale-[1.02]"
+            className="w-full mt-4 py-2 bg-linear-to-r from-blue-500 to-teal-500 text-white rounded-lg font-medium text-sm hover:shadow-md transition-all hover:scale-[1.02]"
           >
             Edit Profile
           </button>
